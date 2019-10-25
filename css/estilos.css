@@ -1,0 +1,162 @@
+body{
+    margin: auto 0px;
+}
+
+#boton{
+    background-color: lightblue;
+    color:black;
+}
+#colorFondo{
+    background-color:white;
+    margin: auto 0px;
+}
+#colorsito{
+    background-color:#85C8D9;
+    margin: auto 0px;
+    height: 55px;
+}
+
+#botonProyNuevo{
+    float: right;
+    background-color: #129ABC;
+}
+#fondoP{
+    background-color: #129ABC;
+}
+#fondoTarjeta{
+    margin:  auto 0 px;
+    min-width: 730px;
+    min-height: 850px;
+}
+#f1{
+    width: 160px;
+    height: 36px;
+    border-radius: 3px;
+    border: 1px solid #DEDEE5;
+
+}
+#fechaIzq{
+    width: 155px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #DEDEE5;
+    margin-left: 500px;
+    margin-top:-20px;
+}
+#fAvance{
+    width: 90px;
+    height: 25px;
+}
+#montoEjer{
+    width: 120px;
+    height: 25px;
+}
+#banner{
+   /* #FFFDFD*/
+   margin: auto 0px;
+    background-color: #2196f3;
+    height: 80px;
+    width: 1130x;
+    margin-left:225px;
+
+}
+#fondoSlider{
+    background-color: #424242;
+    height: 50px;
+
+}
+#tabla{
+   width: 675px;
+   height: 120px;
+}
+#tabla2{
+    width: 675px;
+    height: 50px;
+ }
+ #boton{
+    background-color:#2196f3;
+ }
+
+
+.fecha1{
+    width: 160px;
+    height: 36px;
+    border-radius: 3px;
+    border: 1px solid #DEDEE5;
+}
+
+
+.btncerrar{
+    float: right;
+    background: red;
+    width: 10px;
+    height: 8px;
+
+}
+.chica{
+    font-size: 1em;
+    font-family:  sans-serif;
+}
+.Logo{
+    position: relative;
+    width: 175px;
+    height: 56px;
+    left: 24px;
+    top: -67px;
+}
+.loguito{
+    position: relative;
+    width: 224px;
+    height: 80px;
+    left: 1px;
+    top: -136px;
+    background-color: rgba(255, 255, 255,0.3);
+    border: transparent;
+}
+.logo2{
+    position: relative;
+    width: 10px;
+    height: 10px;
+}
+.fondito{
+    background-color: #F7F6F2;
+}
+.fonditoD{
+    background-color: rgba(173, 167, 167, 0.4);
+
+}
+
+
+
+.grande{
+    margin-left: 15px;
+    font-size: 1.9em;
+    font-family:  sans-serif;
+}
+.mediana{
+   font-size: 1.6em;
+   font-family: Verdana Tahoma, sans-serif;
+}
+.chica{
+    font-size: 1em;
+    font-family: sans-serif;
+}
+.chica2{
+    font-size: 0.8em;
+    font-family: sans-serif;
+}
+
+.nito{
+    font-weight: bold;
+}
+
+.slider{
+    margin: auto 0px;
+    min-height: 1024px; 
+}
+.izquierda{
+    margin-left: 430px;
+
+}
+
+

@@ -1,0 +1,84 @@
+/* Base de conocimiento bc3.pl*/ 
+//reglas:
+esFeliz(valentin). 
+escuchaMusica(ben).
+escuchaMusica(valentin).
+
+//metas 
+tocaGuitarra(valentin):- escuchaMusica(valentin), esFeliz(valentin). // , = && 
+tocaGuitarra(ben):- esFeliz(ben). 
+tocaGuitarra(ben):-escuchaMusica(ben).
+
+//make es para recargar en prolog 
+
+//tocaGuitarra(valentin) = false
+//escuchaMusica(valentin) = false 
+
+////tocaGuitarra(valentin) = true
+
+nota:
+ ; = or.
+ 
+
+
+
+--------------------------------------------------------------------------
+/* base de conocimiento bc4.pl */
+hechos:: 
+mujer(maria).
+mujer(julia).
+mujer(yolanda).
+
+reglas::
+ama(valentin,maria).
+ama(marcelo,maria).
+ama(pedro,helena).
+ama(helena,pedro).
+
+
+//?-ama (valentin,X)
+X= maria.
+
+?-mujer(X).
+X= julia
+X= maria
+X= yolanda
+
+//?-ama(X,Y)
+//?-ama(marcelo,X),mujer(X)
+ X=maria.
+//?-ama(marcelo,X)
+ X=maria.
+
+// es la presona quein ama a marcelo quien tambien l ama el 
+ama(marcelo,X),ama(X,marcelo) = FALSE
+
+
+//quien es la presona quein ama a pedro quien tambien l ama el 
+ama(pedro,X),ama(X,pedro)= X=helena
+
+
+
+
+
+-------------------------------------------------------------------
+/*base del conocimiento*/
+ama(valentin,maria).
+ama(marcelo,maria).
+ama(pedro,helena).
+ama(helena,pedro).
+cela(X,Y) :- ama(X,Z), ama(Y,Z).
+
+EL PREDICADO CELA expresa la rela X cela a Y si X ama a Z y Y ama a Z
+
+------------------------------------------------------------------------
+platica(X,padre(padre(padre(ben))));
+
+//ben es un atomo(numero o objeto) debe de estar en minuscula  
+//platica es fuctor (0
+// X es variable 
+// padre es un argumento 
+
+
+
+
