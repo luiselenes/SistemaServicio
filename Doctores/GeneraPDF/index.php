@@ -156,26 +156,33 @@
 	$pdf->SetFont('Arial','B',10);
 	$pdf->Cell(190,10,'Resumen',0,1,'L');
 	$pdf->SetFont('Arial','B',8);
-	$pdf->MultiCell(190,10,utf8_decode($_POST['resumen']),0,'L',0);
+
+	///cambiar las propiedades del resumen del pdf
+	$pdf->MultiCell(190,4,utf8_decode($_POST['resumen']),1,'L',0);
 	$pdf->SetFont('Arial','B',10);
-	$pdf->Cell(190,10,'Comentarios',0,1,'L');
+	$pdf->Cell(190,10,'Comentarios',1,1,'L');
 	$pdf->SetFont('Arial','B',8);
-	$pdf->MultiCell(190,10,utf8_decode($_POST['comment']),0,'L',0);
-	$pdf->Cell(190,15,'','B',1,'L');
-	$pdf->Cell(95,10,'Responsable Tecnico','LR',0,'C');
-	$pdf->Cell(95,10,'Aval','LR',1,'C');
-	$pdf->Cell(95,10,'','LR',0,'C');
-	$pdf->Cell(95,10,'','LR',1,'C');
-	$pdf->Cell(95,10,'','LR',0,'C');
-	$pdf->Cell(95,10,'','LR',1,'C');
-	$pdf->Cell(95,10,'Nombre y Firma','LRB',0,'C');
-	$pdf->Cell(95,10,'Nombre y Firma','LRB',1,'C');
+	$pdf->MultiCell(190,4,utf8_decode($_POST['comment']),1,'L',0);
+	$pdf->Cell(190,10,'',0,1,'L');
+	$pdf->Cell(95,5,'Responsable Tecnico','LTR',0,'C');
+	$pdf->Cell(95,5,'Aval','LTR',1,'C');
+	// $pdf->Cell(95,10,'','LR',0,'C');
+	// $pdf->Cell(95,10,'','LR',1,'C');
+	 $pdf->Cell(95,20,'','LR',0,'C');
+	$pdf->Cell(95,20,'','LR',1,'C');
+	$pdf->Cell(95,5,'Nombre y Firma','LRB',0,'C');
+	$pdf->Cell(95,5,'Nombre y Firma','LRB',1,'C');
 	$pdf->SetFont('Arial','B',7);
-	$pdf->MultiCell(190,10,utf8_decode('La firma del aval podra ser preferentemente del Jefe de la Division de Estudios de Prostgrado e Investigacion, el Jefe del Departamento Académico correspondiente o del Subdirector Académico'),0,'L',0);
-	
+	$pdf->MultiCell(190,3,utf8_decode('La firma del aval podra ser preferentemente del Jefe de la Division de Estudios de Prostgrado e Investigacion, el Jefe del Departamento Académico correspondiente o del Subdirector Académico'),0,'L',0);
+	// Cell(float w [, float h [, string txt [, mixed border [, int ln 
+	// [, string align [, boolean fill [, mixed link]]]]]]])
+	//  cell (ancho, alto,texto,borde)
 	
 	$bd = new Conexion();
-	$bd->query("INSERT INTO `movimientos`(`Descripcion`, `IDUsuario`) VALUES ('".$_SESSION['NombrePersona']." GENERO un reporte, el cual es el ".$_POST['tipoInf']." para el proyecto con clave: ".$_POST['cve']." - ".$_POST['titproy']."',(SELECT `ID` FROM `usuarios` WHERE `Uname` like '".$_SESSION['Usuario']."'))")or die($bd->error);
+	$bd->query("INSERT INTO `movimientos`(`Descripcion`, `IDUsuario`) VALUES 
+	('".$_SESSION['NombrePersona']." GENERO un reporte, el cual es el ".$_POST['tipoInf'].
+	" para el proyecto con clave: ".$_POST['cve']." - ".$_POST['titproy']."',
+	(SELECT `ID` FROM `usuarios` WHERE `Uname` like '".$_SESSION['Usuario']."'))")or die($bd->error);
 	$pdf->Output();
 	
 ?>
